@@ -11,7 +11,8 @@ mongoose.connect("mongodb://localhost/yelp_beach",{ useNewUrlParser: true });
 app.use(bodyParser.urlencoded({extended:true}));
 //we will render ejs
 app.set("view engine", "ejs");
-
+app.use(express.static(__dirname +"/public"));
+console.log(__dirname);
 //landing page
 app.get("/", function(req, res){
     res.render("landing");
