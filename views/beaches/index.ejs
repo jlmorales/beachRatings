@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to Yelp Beaches!</h1>
+            <p>View our favourite surfing picks from all over the world</p>
+            <p>
+                <a href="/beaches/new" class = "btn btn-primary btn-large">
+                Add new Beaches
+                </a>
+            </p>
+        </div>
+        
+    </header>
+    <div class="row text-center" style="display:flew; flex-wrap: wrap;">
+        <% beaches.forEach(function(beach){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                        <img src="<%= beach.image %>">
+                        <div class="caption">
+                             <h4> <%= beach.name %> </h4>
+                        </div>
+                        <p>
+                            <a href="/beaches/<%=beach._id%>" class="btn btn-primary">More Info</a>
+                        </p>
+                </div>
+                
+            </div>
+            <%}) %>
+    </div>
+
+    
+</div>
+
+<% include ../partials/footer %>
